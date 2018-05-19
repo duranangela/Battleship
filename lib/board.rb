@@ -1,8 +1,7 @@
 class Board
-  attr_reader :spots, :layout
 
   def initialize
-    @spots = (('A'..'D').to_a).product(('1'..'4').to_a)
+    spots = (('A'..'D').to_a).product(('1'..'4').to_a)
     spots_array = spots.map do |spot|
       new_spot = spot[0] + spot[1]
       new_spot
