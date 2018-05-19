@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
+require './test/test_helper'
 require './lib/board'
 
 class BoardTest < Minitest::Test
@@ -13,5 +12,5 @@ class BoardTest < Minitest::Test
     board = Board.new
     assert_equal "==========\n. 1 2 3 4 \nA         \nB         \nC         \nD         \n==========", board.board
   end
-  
+
 end
