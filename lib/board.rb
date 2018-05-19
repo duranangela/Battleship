@@ -1,12 +1,16 @@
 class Board
   attr_reader :spots, :layout
 
-  def initialize(x = 'D', y = '4')
-    @spots = (('A'..x).to_a).product(('1'..y).to_a)
-    @layout = Hash[(@spots).map {|x| [x, '  ']}]
+  def initialize
+    @spots = (('A'..'D').to_a).product(('1'..'4').to_a)
+    spots_array = spots.map do |spot|
+      new_spot = spot[0] + spot[1]
+      new_spot
+    end
+    @layout = Hash[spots_array.map {|x| [x, '  ']}]
   end
 
-  def board(h = [], m = [])
+  def board
     line1 = @layout.values[0..3]
     line2 = @layout.values[4..7]
     line3 = @layout.values[8..11]
