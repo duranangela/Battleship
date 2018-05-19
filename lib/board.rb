@@ -11,13 +11,7 @@ class Board
     line2 = @layout.values[4..7]
     line3 = @layout.values[8..11]
     line4 = @layout.values[12..15]
-    puts '=========='
-    puts '. 1 2 3 4 '
-    puts "A " + line1.join
-    puts "B " + line2.join
-    puts "C " + line3.join
-    puts "D " + line4.join
-    puts '=========='
+    "==========\n. 1 2 3 4 \nA #{line1.join}\nB #{line2.join}\nC #{line3.join}\nD #{line4.join}\n=========="
   end
 
 end
