@@ -9,7 +9,6 @@ class CompShots
   end
 
   def ship_board
-    puts @player_ships.board
     @player_ships.get_ships
   end
 
