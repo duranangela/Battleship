@@ -1,4 +1,3 @@
-
 module ValidateShips
 
   def validate_small(smship)
@@ -103,6 +102,6 @@ module ValidateShips
     elsif bgship.sort == ['D2', 'D4'].sort
       'D3'
     end
-  end    
+  end
 
 end

@@ -32,13 +32,18 @@ class PlayerShips < Board
   end
 
   def big_ship
-    @bgship = gets.chomp.split(' ')
-    until validate_big(@bgship)
-      puts "Invalid choice, please try again: "
+    loop do
+      @bgship = []
       @bgship = gets.chomp.split(' ')
+      until validate_big(@bgship)
+        puts "Invalid choice, please try again: "
+        @bgship = gets.chomp.split(' ')
+      end
+      spot = get_middle_spot(@bgship)
+      @bgship << spot
+      break if (@smship + @bgship).uniq.length == 5
+      puts "Ships can't overlap, please try again: "
     end
-    spot = get_middle_spot(@bgship)
-    @bgship << spot
     @layout[@bgship[0]] = 'S '
     @layout[@bgship[1]] = 'S '
     @layout[@bgship[2]] = 'S '
