@@ -1,2 +1,2 @@
-require './test/test_helper'
-require './lib/validate_ships'
+# require './test/test_helper'
+# require './lib/validate_ships'

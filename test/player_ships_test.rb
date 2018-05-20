@@ -1,3 +1,4 @@
+require './test/test_helper'
 require './lib/player_ships'
 
 class PlayerShipsTest < Minitest::Test
