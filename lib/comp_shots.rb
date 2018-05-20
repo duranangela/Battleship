@@ -16,7 +16,6 @@ class CompShots
   def comp_shot
     puts message1
     spot = rand(0..15)
-    binding.pry
     until ['  ', 'S '].include? @player_ships.layout.values[spot]
       spot = rand(0..15)
     end
