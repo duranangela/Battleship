@@ -9,6 +9,12 @@ attr_reader :smship, :bgship
     @bgship = []
   end
 
+  def get_ships
+    small_ship
+    big_ship
+  end
+
+
   def small_ship
     first = (0..14).to_a.sample
     case first
@@ -30,7 +36,12 @@ attr_reader :smship, :bgship
     end
     @smship << @layout.keys[first]
     @smship << @layout.keys[second]
-    @smship
+    @layout.each do |k, v|
+      if @smship.include?(k)
+        v = 'S '
+      end
+      @layout[k] = v
+    end
   end
 
   def big_ship
@@ -83,7 +94,12 @@ attr_reader :smship, :bgship
       @bgship << @layout.keys[index2]
       @bgship << @layout.keys[index3]
     end
-    @bgship
+    @layout.each do |k, v|
+      if @bgship.include?(k)
+        v = 'S '
+      end
+      @layout[k] = v
+    end
   end
 
 end
