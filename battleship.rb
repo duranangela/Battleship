@@ -1,6 +1,4 @@
 require './lib/play'
-require './lib/game_over'
-
 
 response = ""
 while response != "q" && response != "quit" do
@@ -11,7 +9,7 @@ while response != "q" && response != "quit" do
       game = Play.new
       game.play_game
   elsif response == "i" || response == "instructions"
-    instructions
+    puts "instructions"
   elsif response != "q" && response != "quit"
     puts "\nInvalid response, try again."
   else
