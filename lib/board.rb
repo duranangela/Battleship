@@ -1,4 +1,5 @@
 class Board
+  attr_accessor :layout
 
   def initialize
     spots = (('A'..'D').to_a).product(('1'..'4').to_a)

@@ -4,7 +4,7 @@ module ValidateShips
     if smship[0] == 'A1'
       ['A2', 'B1'].include? smship[1]
     elsif smship[0] == 'A2'
-      ['A1', 'B2', 'A2'].include? smship[1]
+      ['A1', 'B2', 'A3'].include? smship[1]
     elsif smship[0] == 'A3'
       ['A2', 'B3', 'A4'].include? smship[1]
     elsif smship[0] == 'A4'
