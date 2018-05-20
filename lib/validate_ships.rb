@@ -39,22 +39,70 @@ module ValidateShips
     end
   end
 
-
-  def validate_exists(spot)
-    until @layout.include?(spot)
-      puts "Invalid choice, try again"
-      spot = gets.chomp.chars
+  def validate_big(bgship)
+    if bgship[0] == 'A1'
+      ['A3', 'C1'].include? bgship[1]
+    elsif bgship[0] == 'A2'
+      ['A4', 'C2'].include? bgship[1]
+    elsif bgship[0] == 'A3'
+      bgship[1] == 'C3'
+    elsif bgship[0] == 'A4'
+      bgship[1] == 'C4'
+    elsif bgship[0] == 'B1'
+      ['B3', 'D1'].include? bgship[1]
+    elsif bgship[0] == 'B2'
+      ['B4', 'D2'].include? bgship[1]
+    elsif bgship[0] == 'B3'
+      bgship[1] == 'D3'
+    elsif bgship[0] == 'B4'
+      bgship[1] == 'D4'
+    elsif bgship[0] == 'C1'
+      bgship[1] == 'C3'
+    elsif bgship[0] == 'C2'
+      bgship[1] == 'C4'
+    elsif bgship[0] == 'D1'
+      bgship[1] == 'D3'
+    elsif bgship[0] == 'D2'
+      bgship[1] == 'D4'
+    else
+      false
     end
   end
 
-  def validate_place(spot1, spot2)
-    until spot1 != spot2
-      puts "You have to pick a different square!! Try again:"
-      spot2 = gets.chomp.chars
+  def get_middle_spot(bgship)
+    if bgship.sort == ['A1', 'A3'].sort
+      'A2'
+    elsif bgship.sort == ['A1', 'C1'].sort
+      'B1'
+    elsif bgship.sort == ['A2', 'A4'].sort
+      'A3'
+    elsif bgship.sort == ['A2', 'C2'].sort
+      'B2'
+    elsif bgship.sort == ['A3', 'C3'].sort
+      'B3'
+    elsif bgship.sort == ['A4', 'C4'].sort
+      'B4'
+    elsif bgship.sort == ['B1', 'B3'].sort
+      'B2'
+    elsif bgship.sort == ['B1', 'D1'].sort
+      'C1'
+    elsif bgship.sort == ['B2', 'B4'].sort
+      'B3'
+    elsif bgship.sort == ['B2', 'D2'].sort
+      'C2'
+    elsif bgship.sort == ['B3', 'D3'].sort
+      'C3'
+    elsif bgship.sort == ['B4', 'D4'].sort
+      'C4'
+    elsif bgship.sort == ['C1', 'C3'].sort
+      'C2'
+    elsif bgship.sort == ['C2', 'C4'].sort
+      'C3'
+    elsif bgship.sort == ['D1', 'D3'].sort
+      'D2'
+    elsif bgship.sort == ['D2', 'D4'].sort
+      'D3'
     end
-    # if spot2[0] == spot1[0]
-    #   if spot2[1] == (spot[1+1] || spot[1+2]
-    # binding.pry
-  end
+  end    
 
 end
