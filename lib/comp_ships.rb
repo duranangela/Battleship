@@ -1,7 +1,7 @@
 require './lib/board'
 
 class CompShips < Board
-attr_reader :smship, :bgship
+  attr_reader :smship, :bgship
 
   def initialize
     super

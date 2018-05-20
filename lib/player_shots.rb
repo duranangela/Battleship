@@ -1,10 +1,12 @@
 require './lib/comp_ships'
+require './lib/hitboard'
 
 class PlayerShots
-  attr_reader :comp_ships
+  attr_reader :comp_ships, :hitboard
 
   def initialize
     @comp_ships = CompShips.new
+    @hitboard = HitBoard.new
   end
 
   def ships
@@ -12,9 +14,15 @@ class PlayerShots
   end
 
   def take_shot
-    puts @comp_ships.board
+    puts @hitboard.board
     puts message1
-    
+    shot = gets.chomp
+    if @comp_ships.layout[shot] == 'S '
+      @hitboard.layout[shot] = 'H '
+    else
+      @hitboard.layout[shot] = 'M '
+    end
+    puts @hitboard.board
   end
 
   def message1
