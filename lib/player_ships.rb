@@ -1,5 +1,6 @@
 require './lib/board'
 require './lib/validate_ships'
+require 'colorize'
 require 'pry'
 
 class PlayerShips < Board
