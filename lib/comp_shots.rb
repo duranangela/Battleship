@@ -20,15 +20,15 @@ class CompShots
     end
     shot = @player_ships.layout.keys[spot]
     if player_ships.layout[shot] == 'S '
-      player_ships.layout[shot] = 'H '
+      player_ships.layout[shot] = 'H '.red
     else
-      player_ships.layout[shot] = 'M '
+      player_ships.layout[shot] = 'M '.cyan
     end
-    puts player_ships.board
+    puts "\nYour ships\n" + player_ships.board
   end
 
   def message1
-    "Now it's my turn!"
+    "\n\nNow it's my turn!\n\n"
   end
 
 end

@@ -15,11 +15,12 @@ class PlayerShips < Board
 
   def get_ships
     puts message1
+    puts "\n" + board + "\n"
     small_ship
-    puts board
+    puts "\nYour ships:\n" + board + "\n"
     puts message2
     big_ship
-    puts board
+    puts "\nYour ships:\n" + board + "\n"
   end
 
   def small_ship
@@ -51,7 +52,7 @@ class PlayerShips < Board
   end
 
   def message1
-    "I have laid out my ships on the grid.\nYou now need to layout your two ships.\nThe first is two units long and the second is three units long.\nThe grid has A1 at the top left and D4 at the bottom right.\n\nEnter the two squares for the two-unit ship, for example 'A1 A2': "
+    "\n\nI have laid out my ships on the grid.\nYou now need to layout your two ships.\nThe first is two units long and the second is three units long.\nThe grid has A1 at the top left and D4 at the bottom right.\n\nEnter the two squares for the two-unit ship, for example 'A1 A2': "
   end
 
   def message2
