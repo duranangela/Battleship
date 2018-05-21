@@ -14,19 +14,20 @@ class PlayerShots
   end
 
   def take_shot
-    puts @hitboard.board
+    puts "\nComputer's ships:\n" + @hitboard.board
     puts message1
-    shot = gets.chomp
+    shot = gets.chomp.upcase
     if @comp_ships.layout[shot] == 'S '
       @hitboard.layout[shot] = 'H '
+      puts "\nIt's a hit!\n"
     else
       @hitboard.layout[shot] = 'M '
+      puts "\nYou missed.\n"
     end
-    puts @hitboard.board
   end
 
   def message1
-    "Now it's your turn. Please enter a square for your shot: "
+    "\nIt's your turn. Please enter a square for your shot:"
   end
 
 end

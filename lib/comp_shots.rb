@@ -13,7 +13,7 @@ class CompShots
   end
 
   def comp_shot
-    puts message1
+    message1
     spot = rand(0..15)
     until ['  ', 'S '].include? @player_ships.layout.values[spot]
       spot = rand(0..15)
@@ -21,14 +21,25 @@ class CompShots
     shot = @player_ships.layout.keys[spot]
     if player_ships.layout[shot] == 'S '
       player_ships.layout[shot] = 'H '
+      puts "\nIt's a hit!\n"
     else
       player_ships.layout[shot] = 'M '
+      puts "\nI missed.\n"
     end
-    puts player_ships.board
+    puts "\nYour ships:\n" + player_ships.board
   end
 
   def message1
-    "Now it's my turn!"
+    puts "\n\nNow it's my turn!\n"
+    print'.'
+    sleep 0.5
+    print'.'
+    sleep 0.5
+    print'.'
+    sleep 0.5
+    print'.'
+    sleep 0.5
+    puts '.'
   end
 
 end
