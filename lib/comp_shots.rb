@@ -31,13 +31,13 @@ class CompShots
 
   def message1
     puts "\n\nNow it's my turn!\n"
-    print'.'
+    print '.'
     sleep 0.5
-    print'.'
+    print '.'
     sleep 0.5
-    print'.'
+    print '.'
     sleep 0.5
-    print'.'
+    print '.'
     sleep 0.5
     puts '.'
   end
