@@ -28,4 +28,11 @@ class CompShipsTest < Minitest::Test
     assert_equal 5, result_array.uniq.length
   end
 
+  def test_it_can_make_both_ships_at_once
+    comp = CompShips.new
+    comp.get_ships
+    assert_equal 2, comp.smship.length
+    assert_equal 3, comp.bgship.length
+  end
+  
 end
