@@ -15,15 +15,15 @@ class CompShots
   def comp_shot
     message1
     spot = rand(0..15)
-    until ['  ', 'S '].include? @player_ships.layout.values[spot]
+    until ['  ', 'S '].include? @player_ships.layout[spot][2]
       spot = rand(0..15)
     end
-    shot = @player_ships.layout.keys[spot]
-    if player_ships.layout[shot] == 'S '
-      player_ships.layout[shot] = 'H '
+    shot = @player_ships.layout[spot]
+    if shot[2] == 'S '
+      shot[2] = 'H '
       puts "\nIt's a hit!\n"
     else
-      player_ships.layout[shot] = 'M '
+      shot[2] = 'M '
       puts "\nI missed.\n"
     end
     puts "\nYour ships:\n" + player_ships.board

@@ -54,27 +54,6 @@ class PlayerShips < Board
     @bgship[2][2] = 'S '
   end
 
-  #   loop do
-  #     @bgship = []
-  #     @bgship = gets.chomp.split(' ')
-  #     until validate_big_spots(@bgship)
-  #       puts "Choices must be on the board, please try again: "
-  #       @bgship = gets.chomp.split(' ')
-  #     end
-  #     until validate_third(@bgship)
-  #       puts ""
-  #
-  #
-  #     spot = get_middle_spot(@bgship)
-  #     @bgship << spot
-  #     break if (@smship + @bgship).uniq.length == 5
-  #     puts "Ships can't overlap, please try again: "
-  #   end
-  #   @layout[@bgship[0]] = 'S '
-  #   @layout[@bgship[1]] = 'S '
-  #   @layout[@bgship[2]] = 'S '
-  # end
-
   def message1
     "\n\nI have laid out my ships on the grid.\nYou now need to layout your two ships.\nThe first is two units long and the second is three units long.\nThe grid has A1 at the top left and D4 at the bottom right.\n\nEnter the two squares for the two-unit ship, for example 'A1 A2': "
   end
