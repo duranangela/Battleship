@@ -24,7 +24,7 @@ class PlayerShips < Board
 
   def small_ship
     @smship = gets.chomp.upcase.split(' ')
-    until validate_small(@smship)
+    until validate_spots(@smship) && validate_small(@smship)
       puts "Invalid choice, please try again: "
       @smship = gets.chomp.upcase.split(' ')
     end
@@ -38,7 +38,7 @@ class PlayerShips < Board
     until (@smship + @bgship).uniq.length == 5
       @bgship = gets.chomp.upcase.split(' ')
       loop do
-        if validate_big_spots(@bgship)
+        if validate_spots(@bgship) && validate_big_spots(@bgship) 
           @bgship << get_second(@bgship)
           break
         else

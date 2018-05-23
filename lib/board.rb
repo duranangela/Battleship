@@ -8,9 +8,9 @@ class Board
     spots = (('A'..(x+64).chr).to_a).product(('1'..(x.to_s)).to_a)
     spots = spots.join.scan(/../)
     zipped = coordinates.zip(spots)
-    @layout = zipped.map do |array|
-      array[2] = '  '
-      [array[0], array[1], array[2]]
+    @layout = zipped.map do |zarray|
+      zarray[2] = '  '
+      [zarray[0], zarray[1], zarray[2]]
     end
   end
 

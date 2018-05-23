@@ -1,4 +1,12 @@
+require 'pry'
+
 module ValidateShips
+
+  def validate_spots(smship)
+    first = layout.find { |spot| spot[1] == smship[0]}
+    second = layout.find { |spot| spot[1] == smship[1]}
+    !first.nil? && !second.nil?
+  end
 
   def validate_small(smship)
     first = layout.find { |spot| spot[1] == smship[0]}
