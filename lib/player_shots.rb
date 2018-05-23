@@ -13,15 +13,21 @@ class PlayerShots
     @comp_ships.get_ships
   end
 
-  def take_shot
+  def get_input
     puts "\nComputer's ships:\n" + @hitboard.board
     puts message1
-    shot = gets.chomp.upcase
-    if @comp_ships.layout[shot] == 'S '
-      @hitboard.layout[shot] = 'H '
+    input = gets.chomp.upcase
+    take_shot(input)
+  end
+
+  def take_shot(input)
+    cspace = @comp_ships.layout.find {|spot| spot[1] == input}
+    hspace = @hitboard.layout.find {|spot| spot[1] == input}
+    if cspace[2] == 'S '
+      hspace[2] = 'H '
       puts "\nIt's a hit!\n"
     else
-      @hitboard.layout[shot] = 'M '
+      hspace[2] = 'M '
       puts "\nYou missed.\n"
     end
   end

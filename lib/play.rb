@@ -15,14 +15,14 @@ class Play
     time = Time.now
     num_shots = 0
     loop do
-      @playershot.take_shot
+      @playershot.get_input
       num_shots +=1
-      break if @playershot.hitboard.layout.values.count('H ') == 5
+      break if @playershot.hitboard.layout.count {|spot| spot[2] == 'H '} == 5
       @compshot.comp_shot
-      break if @compshot.player_ships.layout.values.count('H ') == 5
+      break if @compshot.player_ships.layout.count {|spot| spot[2] == 'H '} == 5
     end
-    winner(time, num_shots) if @playershot.hitboard.layout.values.count('H ') == 5
-    loser(time, num_shots) if @compshot.player_ships.layout.values.count('H ') == 5
+    winner(time, num_shots) if @playershot.hitboard.layout.count {|spot| spot[2] == 'H '} == 5
+    loser(time, num_shots) if @compshot.player_ships.layout.count {|spot| spot[2] == 'H '} == 5
   end
 
   def winner(time, num_shots)

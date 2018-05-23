@@ -10,7 +10,7 @@ class BoardTest < Minitest::Test
 
   def test_it_makes_a_board
     board = Board.new
-    assert_equal "==========\n. 1 2 3 4 \nA         \nB         \nC         \nD         \n==========", board.board
+    assert_equal "\n==========\n. 1 2 3 4 \nA         \nB         \nC         \nD         \n==========\n", board.board
   end
 
 end
