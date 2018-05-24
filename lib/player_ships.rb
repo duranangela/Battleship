@@ -1,6 +1,5 @@
 require './lib/board'
 require './lib/validate_ships'
-require 'pry'
 
 class PlayerShips < Board
   include ValidateShips

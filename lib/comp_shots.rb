@@ -1,5 +1,4 @@
 require './lib/player_ships'
-require 'pry'
 
 class CompShots
   attr_reader :player_ships

@@ -1,6 +1,5 @@
 require './lib/comp_shots.rb'
 require './lib/player_shots.rb'
-require 'pry'
 
 class Play
 
