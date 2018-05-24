@@ -1,5 +1,3 @@
-require 'pry'
-
 module ValidateShips
 
   def validate_spots(smship)
