@@ -16,10 +16,10 @@ class PlayerShips < Board
     puts message1
     puts "\n" + board + "\n"
     small_ship
-    puts "\nYour ships:\n" + board + "\n"
+    puts "\nYour ships:" + board + "\n"
     puts message2
     big_ship
-    puts "\nYour ships:\n" + board + "\n"
+    puts "\nYour ships:" + board + "\n"
   end
 
   def small_ship
@@ -38,7 +38,7 @@ class PlayerShips < Board
     until (@smship + @bgship).uniq.length == 5
       @bgship = gets.chomp.upcase.split(' ')
       loop do
-        if validate_spots(@bgship) && validate_big_spots(@bgship) 
+        if validate_spots(@bgship) && validate_big_spots(@bgship)
           @bgship << get_second(@bgship)
           break
         else
