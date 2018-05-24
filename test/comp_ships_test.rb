@@ -34,5 +34,5 @@ class CompShipsTest < Minitest::Test
     assert_equal 2, comp.smship.length
     assert_equal 3, comp.bgship.length
   end
-  
+
 end

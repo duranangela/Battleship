@@ -26,7 +26,7 @@ class CompShots
       shot[2] = 'M '
       puts "\nI missed.\n"
     end
-    puts "\nYour ships:\n" + player_ships.board
+    puts "\nYour ships:" + player_ships.board
   end
 
   def message1

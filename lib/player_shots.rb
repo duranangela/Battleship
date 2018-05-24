@@ -14,9 +14,13 @@ class PlayerShots
   end
 
   def get_input
-    puts "\nComputer's ships:\n" + @hitboard.board
+    puts "\nComputer's ships:" + @hitboard.board
     puts message1
     input = gets.chomp.upcase
+    until @comp_ships.layout.any? { |spot| spot[1] == input }
+      puts "Invalid choice, please try again."
+      input = gets.chomp.upcase
+    end
     take_shot(input)
   end
 
